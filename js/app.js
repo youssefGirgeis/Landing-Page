@@ -31,6 +31,21 @@
  */
 
 // build the nav
+const buildNav = function () {
+  const sections = document.querySelectorAll(".landing__container");
+  const menu = document.querySelector(".navbar__menu");
+  const list = document.querySelector("#navbar__list");
+
+  for (const section of sections) {
+    const listItem = document.createElement("li");
+    listItem.classList.add("menu__link");
+    listItem.textContent = section.firstElementChild.textContent;
+    listItem.style.display = "inline-block";
+    list.appendChild(listItem);
+  }
+};
+
+buildNav();
 
 // Add class 'active' to section when near top of viewport
 
