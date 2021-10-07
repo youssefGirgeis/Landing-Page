@@ -47,11 +47,18 @@ const buildNav = function () {
   list.style.cssText = "display: flex; justify-content: flex-end;";
 };
 
-buildNav();
-
 // Add class 'active' to section when near top of viewport
 
 // Scroll to anchor ID using scrollTO event
+const scrollToSection = function () {
+  const links = document.querySelectorAll(".menu__link");
+  for (const [i, link] of links.entries()) {
+    link.addEventListener("click", function () {
+      const section = document.getElementById(`section${i + 1}`);
+      section.scrollIntoView();
+    });
+  }
+};
 
 /**
  * End Main Functions
@@ -60,7 +67,7 @@ buildNav();
  */
 
 // Build menu
-
+buildNav();
 // Scroll to section on link click
-
+scrollToSection();
 // Set sections as active
