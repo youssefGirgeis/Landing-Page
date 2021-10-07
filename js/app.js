@@ -40,9 +40,9 @@ const buildNav = function () {
     const listItem = document.createElement("li");
     listItem.classList.add("menu__link");
     listItem.textContent = section.firstElementChild.textContent;
-    listItem.style.display = "inline-block";
     list.appendChild(listItem);
   }
+  list.style.cssText = "display: flex; justify-content: flex-end;";
 };
 
 buildNav();
