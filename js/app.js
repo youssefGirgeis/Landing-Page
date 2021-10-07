@@ -38,8 +38,10 @@ const buildNav = function () {
 
   for (const section of sections) {
     const listItem = document.createElement("li");
-    listItem.classList.add("menu__link");
-    listItem.textContent = section.firstElementChild.textContent;
+    const link = document.createElement("a");
+    link.classList.add("menu__link");
+    link.innerHTML = section.firstElementChild.textContent;
+    listItem.appendChild(link);
     list.appendChild(listItem);
   }
   list.style.cssText = "display: flex; justify-content: flex-end;";
