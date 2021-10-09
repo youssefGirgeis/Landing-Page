@@ -23,6 +23,15 @@
  * Start Helper Functions
  *
  */
+const activateElements = function (section, navLink) {
+  section.classList.add("your-active-class");
+  navLink.classList.add("active");
+};
+
+const dactivateElements = function (section, navLink) {
+  section.classList.remove("your-active-class");
+  navLink.classList.remove("active");
+};
 
 /**
  * End Helper Functions
@@ -50,17 +59,14 @@ const buildNav = function () {
 const activateSection = function () {
   const sections = document.getElementsByTagName("section");
   const navLinks = document.querySelectorAll(".menu__link");
+
   window.addEventListener("scroll", function () {
     for (let i = 0; i < sections.length; i++) {
       const distance = sections[i].getBoundingClientRect();
 
-      if (distance.top <= 400 && distance.top > -300) {
-        sections[i].classList.add("your-active-class");
-        navLinks[i].classList.add("active");
-      } else {
-        sections[i].classList.remove("your-active-class");
-        navLinks[i].classList.remove("active");
-      }
+      if (distance.top <= 400 && distance.top > -300)
+        activateElements(sections[i], navLinks[i]);
+      else dactivateElements(sections[i], navLinks[i]);
     }
   });
 };
