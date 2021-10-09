@@ -33,7 +33,6 @@
 // build the nav
 const buildNav = function () {
   const sections = document.querySelectorAll(".landing__container");
-  const menu = document.querySelector(".navbar__menu");
   const list = document.querySelector("#navbar__list");
 
   for (const section of sections) {
@@ -48,6 +47,23 @@ const buildNav = function () {
 };
 
 // Add class 'active' to section when near top of viewport
+const activateSection = function () {
+  const sections = document.getElementsByTagName("section");
+  const navLinks = document.querySelectorAll(".menu__link");
+  window.addEventListener("scroll", function () {
+    for (let i = 0; i < sections.length; i++) {
+      const distance = sections[i].getBoundingClientRect();
+
+      if (distance.top <= 400 && distance.top > -300) {
+        sections[i].classList.add("your-active-class");
+        navLinks[i].classList.add("active");
+      } else {
+        sections[i].classList.remove("your-active-class");
+        navLinks[i].classList.remove("active");
+      }
+    }
+  });
+};
 
 // Scroll to anchor ID using scrollTO event
 const scrollToSection = function () {
@@ -71,3 +87,4 @@ buildNav();
 // Scroll to section on link click
 scrollToSection();
 // Set sections as active
+activateSection();
