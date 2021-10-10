@@ -17,6 +17,7 @@
  * Define Global Variables
  *
  */
+let timer = null; // used to clear out settimeout
 
 /**
  * End Global Variables
@@ -82,6 +83,17 @@ const scrollToSection = function () {
   }
 };
 
+// hide navbar when not scrolling
+const hideNavbar = function () {
+  window.addEventListener("scroll", function () {
+    document.querySelector("#navbar__list").style = "flex";
+    if (timer !== null) clearTimeout(timer);
+    timer = setTimeout(function () {
+      document.querySelector("#navbar__list").style.display = "none";
+    }, 1000);
+  });
+};
+
 /**
  * End Main Functions
  * Begin Events
@@ -94,3 +106,5 @@ buildNav();
 scrollToSection();
 // Set sections as active
 activateSection();
+// hide navbar when not scrolling
+hideNavbar();
