@@ -76,6 +76,7 @@ const activateSection = function () {
  * @description Scroll to section when clicking on the navbar item
  */
 const scrollToSection = function () {
+  document.querySelector('html').style.scrollBehavior = 'smooth';
   const links = document.querySelectorAll('.menu__link');
   for (const [i, link] of links.entries()) {
     link.addEventListener('click', function () {
