@@ -6,9 +6,9 @@ This landing page creates navigation dynamically using Javascript, scrolls to se
 <h2>Project Structure</h2>
 index.html
 css
-    style.css
+----- style.css
 js
-    app.js
+----- app.js
 README.md
 
 <h2>Additonal Features</h2>
