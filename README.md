@@ -4,12 +4,12 @@
 This project is part of Udacity Front End Nanodegree program. The landing page creates navigation dynamically using Javascript, scrolls to sections when clicking on the corresponding navbar item, and activates pages' sections in the viewport as you scroll.
 
 <h2>Project Structure</h2>
-index.html
-css
+<li>index.html</li>
+<li>css</li>
 ----- style.css
-js
+<li>js</li>
 ----- app.js
-README.md
+<li>README.md</li>
 
 <h2>Additonal Features</h2>
 <li>When you're not scrolling, the navigation bar vanishes (it is still present on page load) and appears again if you are scrolling.</li>
