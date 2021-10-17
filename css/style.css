@@ -28,13 +28,6 @@ h1 {
   margin: 2em 1rem;
 }
 
-@media only screen and (min-width: 35em) {
-  h1 {
-    font-size: 7em;
-    margin: 2em 4rem 1em;
-  }
-}
-
 h2 {
   /* border-bottom: 1px solid #cc1; */
   border-radius: 10px;
@@ -118,13 +111,6 @@ section {
 .landing__container {
   padding: 1em;
   text-align: left;
-}
-
-@media only screen and (min-width: 35em) {
-  .landing__container {
-    max-width: 50em;
-    padding: 4em;
-  }
 }
 
 section:nth-of-type(even) .landing__container {
@@ -237,5 +223,60 @@ section.your-active-class .landing__container::after {
   }
   to {
     transform: rotate(360deg) translate(-1em) rotate(-360deg);
+  }
+}
+
+/* small size devices */
+@media only screen and (max-width: 35em) {
+  h1 {
+    font-size: 3em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+  .landing__container {
+    max-width: 30em;
+    padding: 1.3em;
+  }
+
+  .menu__link {
+    font-size: 0.8em;
+  }
+}
+
+/* medium size devices */
+@media only screen and (min-width: 35em) {
+  h1 {
+    font-size: 5em;
+  }
+  h2 {
+    font-size: 2em;
+  }
+  .landing__container {
+    max-width: 40em;
+    padding: 2.6em;
+  }
+  .menu__link {
+    font-size: 1em;
+  }
+}
+
+/* large size devices*/
+@media only screen and (min-width: 75em) {
+  h1 {
+    font-size: 7em;
+    margin: 2em 4rem 1em;
+  }
+
+  h2 {
+    font-size: 3em;
+  }
+
+  .landing__container {
+    max-width: 50em;
+    padding: 4em;
+  }
+  .menu__link {
+    font-size: 1.2em;
   }
 }
